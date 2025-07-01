@@ -27,24 +27,70 @@ class AuthService {
    * @param {Object} params - username, email, password, role
    */
   async signup({ username, email, password, role }) {
-    // Validate presence
-    if (!username || !email || !password || !role)
-      throw new Error('Missing required fields');
+    console.log('[AuthService] Signup attempt:', { username, email, role, hasPassword: !!password });
+    
+    // Enhanced validation with specific error messages
+    const validationErrors = [];
+    if (!username || typeof username !== 'string' || username.trim().length === 0) {
+      validationErrors.push('Username is required and must be a non-empty string');
+    }
+    if (!email || typeof email !== 'string' || email.trim().length === 0) {
+      validationErrors.push('Email is required and must be a non-empty string');
+    }
+    if (!password || typeof password !== 'string' || password.length < 6) {
+      validationErrors.push('Password is required and must be at least 6 characters long');
+    }
+    if (!role || typeof role !== 'string' || role.trim().length === 0) {
+      validationErrors.push('Role is required and must be a non-empty string');
+    }
+    
+    // Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email && !emailRegex.test(email)) {
+      validationErrors.push('Email format is invalid');
+    }
+    
+    if (validationErrors.length > 0) {
+      console.log('[AuthService] Validation errors:', validationErrors);
+      throw new Error(validationErrors.join('; '));
+    }
+
+    // Trim inputs
+    username = username.trim();
+    email = email.trim().toLowerCase();
+    role = role.trim();
+
+    // Validate role exists
     const roleObj = await Role.findOne({ where: { name: role } });
-    if (!roleObj) throw new Error('Invalid role');
-    // Check softly regardless of string case - disallow re-register if username exists (case-insensitive) and is active
-    // Find active (not soft-deleted) user with username/email, case-insensitive
+    if (!roleObj) {
+      console.log('[AuthService] Invalid role provided:', role);
+      const availableRoles = await Role.findAll({ attributes: ['name'] });
+      const roleNames = availableRoles.map(r => r.name).join(', ');
+      throw new Error(`Invalid role. Available roles: ${roleNames}`);
+    }
+
+    console.log('[AuthService] Role validation passed:', role);
+
+    // Check for existing users (case-insensitive)
     const existingActive = await User.findOne({
       where: { 
         [Op.or]: [
-          where(fn('lower', col('username')), fn('lower', username)),
-          where(fn('lower', col('email')), fn('lower', email)),
+          where(fn('lower', col('username')), username.toLowerCase()),
+          where(fn('lower', col('email')), email.toLowerCase()),
         ],
         deletedAt: null, // Only consider active users
       }
     });
+
     if (existingActive) {
-      // Check match (case-insensitive)
+      console.log('[AuthService] User conflict detected:', {
+        existingUsername: existingActive.username,
+        existingEmail: existingActive.email,
+        attemptedUsername: username,
+        attemptedEmail: email
+      });
+
+      // Check specific conflict type
       if (existingActive.username.toLowerCase() === username.toLowerCase()) {
         throw new Error('Username is already taken');
       } else if (existingActive.email.toLowerCase() === email.toLowerCase()) {
@@ -53,7 +99,10 @@ class AuthService {
         throw new Error('User with given username or email already exists');
       }
     }
-    // Soft-deleted or purged users do NOT block re-registration
+
+    console.log('[AuthService] No user conflicts found, proceeding with user creation');
+
+    // Hash password and create user
     const passwordHash = await bcrypt.hash(password, 10);
     try {
       const user = await User.create({
@@ -63,11 +112,20 @@ class AuthService {
         roleId: roleObj.id,
         displayName: username
       });
-      // Omit password in plain object
+
+      console.log('[AuthService] User created successfully:', { 
+        id: user.id, 
+        username: user.username, 
+        email: user.email 
+      });
+
+      // Omit password in response
       const { password: omitted, ...userObj } = user.get({ plain: true });
       return userObj;
     } catch (err) {
-      // Defensive: catch unique-constraint errors in case DB constraint fires first
+      console.error('[AuthService] Error during user creation:', err);
+      
+      // Handle database constraint errors
       if (err.name === 'SequelizeUniqueConstraintError') {
         const msg = (err.fields && err.fields.username)
           ? 'Username is already taken'
