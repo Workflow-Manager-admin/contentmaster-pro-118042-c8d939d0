@@ -1,6 +1,10 @@
 const express = require('express');
 const healthController = require('../controllers/health');
 const authRoutes = require('./auth');
+const postRoutes = require('./posts');
+const pageRoutes = require('./pages');
+const mediaRoutes = require('./media');
+const tagRoutes = require('./tags');
 
 const router = express.Router();
 // Health endpoint
@@ -33,7 +37,13 @@ const router = express.Router();
  */
 router.get('/', healthController.check.bind(healthController));
 
-// Mount authentication and role-based endpoints
+ // Mount authentication and role-based endpoints
 router.use('/auth', authRoutes);
+
+// Register new routers here
+router.use('/posts', postRoutes);
+router.use('/pages', pageRoutes);
+router.use('/media', mediaRoutes);
+router.use('/tags', tagRoutes);
 
 module.exports = router;
