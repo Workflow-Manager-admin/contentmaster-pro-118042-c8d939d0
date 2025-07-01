@@ -1,6 +1,7 @@
 const { User, Role } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { Op, fn, col, where } = require('sequelize');
 
 // JWT secret and expiry from environment or defaults
 const JWT_SECRET = process.env.JWT_SECRET || 'changeme_secret';
@@ -32,20 +33,12 @@ class AuthService {
     const roleObj = await Role.findOne({ where: { name: role } });
     if (!roleObj) throw new Error('Invalid role');
     // Check softly regardless of string case - disallow re-register if username exists (case-insensitive) and is active
-    const { Op } = User.sequelize;
     // Find active (not soft-deleted) user with username/email, case-insensitive
     const existingActive = await User.findOne({
       where: { 
         [Op.or]: [
-          // Postgres: use Op.iLike, SQLite fallback: lower field and value comparison
-          User.sequelize.where(
-            User.sequelize.fn('lower', User.sequelize.col('username')),
-            User.sequelize.fn('lower', username)
-          ),
-          User.sequelize.where(
-            User.sequelize.fn('lower', User.sequelize.col('email')),
-            User.sequelize.fn('lower', email)
-          ),
+          where(fn('lower', col('username')), fn('lower', username)),
+          where(fn('lower', col('email')), fn('lower', email)),
         ],
         deletedAt: null, // Only consider active users
       }
@@ -98,7 +91,7 @@ class AuthService {
     // Allow login via username or email
     const user = await User.findOne({
       where: {
-        [User.sequelize.Op.or]: [
+        [Op.or]: [
           { username: usernameOrEmail },
           { email: usernameOrEmail }
         ]
