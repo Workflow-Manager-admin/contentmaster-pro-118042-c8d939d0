@@ -1,0 +1,121 @@
+
+> contentmaster-pro-api@1.0.0 dev
+> nodemon src/server.js
+
+[33m[nodemon] 3.1.9[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: js,json[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
