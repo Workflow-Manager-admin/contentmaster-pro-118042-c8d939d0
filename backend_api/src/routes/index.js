@@ -35,7 +35,10 @@ const router = express.Router();
  *                   type: string
  *                   example: development
  */
-router.get('/', healthController.check.bind(healthController));
+router.get('/', async (req, res) => {
+  const status = await healthController.getStatus();
+  res.json(status);
+});
 
  // Mount authentication and role-based endpoints
 router.use('/auth', authRoutes);
