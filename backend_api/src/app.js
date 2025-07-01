@@ -28,8 +28,11 @@ app.use('/docs', swaggerUi.serve, (req, res, next) => {
 // Parse JSON request body
 app.use(express.json());
 
-// Mount routes
-app.use('/', routes);
+/**
+ * Mount all application routes under /api for consistent API proxying and to match frontend expectations.
+ * This enables endpoints like /api/auth/signup, /api/posts, etc.
+ */
+app.use('/api', routes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
