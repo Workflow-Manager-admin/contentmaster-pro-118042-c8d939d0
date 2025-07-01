@@ -31,10 +31,13 @@ class AuthService {
       throw new Error('Missing required fields');
     const roleObj = await Role.findOne({ where: { name: role } });
     if (!roleObj) throw new Error('Invalid role');
+    // Search for *all* users including soft-deleted for this username or email
     const existing = await User.findOne({
-      where: { [User.sequelize.Op.or]: [{ username }, { email }] }
+      where: { [User.sequelize.Op.or]: [{ username }, { email }] },
+      paranoid: false,
     });
-    if (existing)
+    // Block only if not soft-deleted, allow re-use if user was deleted
+    if (existing && !existing.deletedAt)
       throw new Error('User with given username or email already exists');
     const passwordHash = await bcrypt.hash(password, 10);
     const user = await User.create({
