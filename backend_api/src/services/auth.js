@@ -31,24 +31,24 @@ class AuthService {
       throw new Error('Missing required fields');
     const roleObj = await Role.findOne({ where: { name: role } });
     if (!roleObj) throw new Error('Invalid role');
-    // Check if user exists (including soft-deleted) for username/email
-    const existing = await User.findOne({
-      where: { [User.sequelize.Op.or]: [{ username }, { email }] },
-      // paranoid:false is needed to also find soft-deleted users
-      paranoid: false,
+    // Check if an active (not soft-deleted) user exists with username/email
+    const existingActive = await User.findOne({
+      where: { 
+        [User.sequelize.Op.or]: [{ username }, { email }],
+        deletedAt: null, // Only consider active users
+      }
     });
-    // If active user found (not deleted), do NOT allow sign up
-    if (existing && !existing.deletedAt) {
-      // Be precise about which field is duplicated
-      if (existing.username === username) {
+    if (existingActive) {
+      if (existingActive.username === username) {
         throw new Error('Username is already taken');
-      } else if (existing.email === email) {
+      } else if (existingActive.email === email) {
         throw new Error('Email is already in use');
       } else {
         throw new Error('User with given username or email already exists');
       }
     }
-    // If a soft-deleted user existed, allow re-use (create new one)
+    // Do NOT allow duplicate username/email for still-active user
+    // Soft-deleted users are ignored for uniqueness checks; allow re-register
     const passwordHash = await bcrypt.hash(password, 10);
     try {
       const user = await User.create({
