@@ -31,25 +31,48 @@ class AuthService {
       throw new Error('Missing required fields');
     const roleObj = await Role.findOne({ where: { name: role } });
     if (!roleObj) throw new Error('Invalid role');
-    // Search for *all* users including soft-deleted for this username or email
+    // Check if user exists (including soft-deleted) for username/email
     const existing = await User.findOne({
       where: { [User.sequelize.Op.or]: [{ username }, { email }] },
+      // paranoid:false is needed to also find soft-deleted users
       paranoid: false,
     });
-    // Block only if not soft-deleted, allow re-use if user was deleted
-    if (existing && !existing.deletedAt)
-      throw new Error('User with given username or email already exists');
+    // If active user found (not deleted), do NOT allow sign up
+    if (existing && !existing.deletedAt) {
+      // Be precise about which field is duplicated
+      if (existing.username === username) {
+        throw new Error('Username is already taken');
+      } else if (existing.email === email) {
+        throw new Error('Email is already in use');
+      } else {
+        throw new Error('User with given username or email already exists');
+      }
+    }
+    // If a soft-deleted user existed, allow re-use (create new one)
     const passwordHash = await bcrypt.hash(password, 10);
-    const user = await User.create({
-      username,
-      email,
-      password: passwordHash,
-      roleId: roleObj.id,
-      displayName: username
-    });
-    // Omit password in plain object
-    const { password: omitted, ...userObj } = user.get({ plain: true });
-    return userObj;
+    try {
+      const user = await User.create({
+        username,
+        email,
+        password: passwordHash,
+        roleId: roleObj.id,
+        displayName: username
+      });
+      // Omit password in plain object
+      const { password: omitted, ...userObj } = user.get({ plain: true });
+      return userObj;
+    } catch (err) {
+      // Defensive: catch unique-constraint errors in case DB constraint fires first
+      if (err.name === 'SequelizeUniqueConstraintError') {
+        const msg = (err.fields && err.fields.username)
+          ? 'Username is already taken'
+          : (err.fields && err.fields.email)
+            ? 'Email is already in use'
+            : 'User with given username or email already exists';
+        throw new Error(msg);
+      }
+      throw err;
+    }
   }
 
   // PUBLIC_INTERFACE
