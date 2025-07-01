@@ -40,39 +40,70 @@ Server running at http://0.0.0.0:3001
     '    at Route.dispatch (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/route.js:119:3)\n' +
     '    at Layer.handle [as handle_request] (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/layer.js:95:5)\n' +
     '    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:284:15\n' +
-    '    at Function.process_params (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:346:12)\n' +
-    '    at next (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:280:10)\n' +
-    '    at Function.handle (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:175:3)',
-  requestBody: { username: 'moon', password: '[REDACTED]', role: 'viewer' }
+    ' [32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[DB] All models synchronized.
+Server running at http://0.0.0.0:3001
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[DB] All models synchronized.
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
 }
-[AuthController] Signup request received: {
-  body: { username: 'moon', password: 'free', role: 'viewer' },
-  contentType: 'application/json',
-  userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+4:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
 }
-[AuthController] Extracted signup data: {
-  username: 'moon',
-  email: undefined,
-  role: 'viewer',
-  hasPassword: true
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[DB] All models synchronized.
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
 }
-[AuthService] Signup attempt: {
-  username: 'moon',
-  email: undefined,
-  role: 'viewer',
-  hasPassword: true
-}
-[AuthService] Validation errors: [
-  'Email is required and must be a non-empty string',
-  'Password is required and must be at least 6 characters long'
-]
-[AuthController] Signup failed: {
-  error: 'Email is required and must be a non-empty string; Password is required and must be at least 6 characters long',
-  stack: 'Error: Email is required and must be a non-empty string; Password is required and must be at least 6 characters long\n' +
-    '    at AuthService.signup (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/services/auth.js:55:13)\n' +
-    '    at signup (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/controllers/auth.js:61:40)\n' +
-    '    at Layer.handle [as handle_request] (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/layer.js:95:5)\n' +
-    '    at next (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/route.js:149:13)\n' +
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+s:149:13)\n' +
     '    at Route.dispatch (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/route.js:119:3)\n' +
     '    at Layer.handle [as handle_request] (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/layer.js:95:5)\n' +
     '    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:284:15\n' +
@@ -81,3 +112,54 @@ Server running at http://0.0.0.0:3001
     '    at Function.handle (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/express/lib/router/index.js:175:3)',
   requestBody: { username: 'moon', password: '[REDACTED]', role: 'viewer' }
 }
+SIGTERM signal received: closing HTTP server
+HTTP server closed
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[DB] All models synchronized.
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[DB] All models synchronized.
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
