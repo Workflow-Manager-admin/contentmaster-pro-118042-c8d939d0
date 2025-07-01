@@ -36,6 +36,106 @@ Make sure PostgreSQL is running and connection details are correct in .env file
 [32m[nodemon] restarting due to changes...[39m
 [32m[nodemon] restarting due to changes...[39m
 [32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
 Server running at http://0.0.0.0:3001
 Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
     at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
@@ -63,6 +163,237 @@ Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
 Database functionality will be unavailable until connection is established
 Make sure PostgreSQL is running and connection details are correct in .env file
 [32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
 [32m[nodemon] restarting due to changes...[39m
 [32m[nodemon] starting `node src/server.js`[39m
 Server running at http://0.0.0.0:3001
@@ -119,3 +450,56 @@ Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
 Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
 Database functionality will be unavailable until connection is established
 Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+Server running at http://0.0.0.0:3001
+Database query error: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Error initializing database: Error: connect ECONNREFUSED 127.0.0.1:5432
+    at /home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async query (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:33:17)
+    at async initializeDatabase (/home/kavia/workspace/code-generation/contentmaster-pro-118042-c8d939d0/backend_api/src/config/database.js:57:5) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 5432
+}
+Warning: Failed to initialize database: connect ECONNREFUSED 127.0.0.1:5432
+Database functionality will be unavailable until connection is established
+Make sure PostgreSQL is running and connection details are correct in .env file
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node src/server.js`[39m
+node:events:495
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at doListen (node:net:2014:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1844:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3001
+}
+
+Node.js v18.20.6
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
