@@ -31,24 +31,36 @@ class AuthService {
       throw new Error('Missing required fields');
     const roleObj = await Role.findOne({ where: { name: role } });
     if (!roleObj) throw new Error('Invalid role');
-    // Check if an active (not soft-deleted) user exists with username/email
+    // Check softly regardless of string case - disallow re-register if username exists (case-insensitive) and is active
+    const { Op } = User.sequelize;
+    // Find active (not soft-deleted) user with username/email, case-insensitive
     const existingActive = await User.findOne({
       where: { 
-        [User.sequelize.Op.or]: [{ username }, { email }],
+        [Op.or]: [
+          // Postgres: use Op.iLike, SQLite fallback: lower field and value comparison
+          User.sequelize.where(
+            User.sequelize.fn('lower', User.sequelize.col('username')),
+            User.sequelize.fn('lower', username)
+          ),
+          User.sequelize.where(
+            User.sequelize.fn('lower', User.sequelize.col('email')),
+            User.sequelize.fn('lower', email)
+          ),
+        ],
         deletedAt: null, // Only consider active users
       }
     });
     if (existingActive) {
-      if (existingActive.username === username) {
+      // Check match (case-insensitive)
+      if (existingActive.username.toLowerCase() === username.toLowerCase()) {
         throw new Error('Username is already taken');
-      } else if (existingActive.email === email) {
+      } else if (existingActive.email.toLowerCase() === email.toLowerCase()) {
         throw new Error('Email is already in use');
       } else {
         throw new Error('User with given username or email already exists');
       }
     }
-    // Do NOT allow duplicate username/email for still-active user
-    // Soft-deleted users are ignored for uniqueness checks; allow re-register
+    // Soft-deleted or purged users do NOT block re-registration
     const passwordHash = await bcrypt.hash(password, 10);
     try {
       const user = await User.create({

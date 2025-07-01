@@ -47,6 +47,19 @@ module.exports = (sequelize) => {
     defaultScope: {
       attributes: { exclude: ['password'] },
     },
+    indexes: [
+      // These partial indexes help implement uniqueness only for active users. (Postgres only, but marks for future DBs)
+      // {
+      //   unique: true,
+      //   fields: [sequelize.fn('lower', sequelize.col('username'))],
+      //   where: { deletedAt: null }
+      // },
+      // {
+      //   unique: true,
+      //   fields: [sequelize.fn('lower', sequelize.col('email'))],
+      //   where: { deletedAt: null }
+      // }
+    ],
   });
 
   return User;
